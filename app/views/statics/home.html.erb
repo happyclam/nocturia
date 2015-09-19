@@ -1,0 +1,11 @@
+<% provide(:title, 'Home') %>
+<h1>夜間頻尿診断 ~ with Withings Products ~ </h1>
+<% flash.each do |key, value| %>
+  <div class="alert alert-<%= key %>"><%= value %></div>
+<% end %>
+<% if current_user %>
+Welcome, <%= current_user.name %>!
+<% end %>
+<div align="center">
+  <%= image_tag 'nocturia.png' %>
+</div>

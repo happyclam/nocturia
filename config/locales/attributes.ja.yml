@@ -1,0 +1,7 @@
+ja:
+  activerecord:
+    attributes:
+      setting:
+        duration: 日数
+      user:
+        name: ユーザ名

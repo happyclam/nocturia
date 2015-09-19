@@ -1,0 +1,58 @@
+<% provide(:title, 'About') %>
+<h1>このサイトについて </h1>
+<div>
+  <p>　<a href="http://www2.withings.com/ja/jp//store">Withings社</a>の睡眠トラッキング機能がある製品（<a href="http://www2.withings.com/ja/jp/products/activite/" target="_blank">Activité</a>, <a href="http://www2.withings.com/ja/jp/products/activite-pop/" target="_blank">ACTIVITÉ POP</a>, <a href="http://www2.withings.com/ja/jp/products/pulse/" target="_blank">Pulse O2</a>, <a href="http://www2.withings.com/ja/jp/products/aura/" target="_blank">Withings Aura</a>）を使って蓄積されたデータを使ってグラフ表示し、夜間頻尿の傾向をユーザ自身で判断するためのサイトです。
+  </p>
+  <p>　Withings社が提供するAPIを使用して睡眠中に目覚めた回数を取得しグラフ表示しています。
+    <div class="image_div">
+      <%= link_to(image_tag("nocturia_screenshot.png", :width => 320, :height => 240, :alt => "グラフ表示例", :title => "グラフ表示例"), asset_path("nocturia_screenshot.png"), {:class => "image_link", :target => "_blank"}) %>
+    </div>
+    <br />　一般的に夜間睡眠中に２回以上尿意を感じて起きることがあれば頻尿と診断されることがあるそうです<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>が、このサイトで表示するコメント等にはなんら医学的根拠はありません。ご自身で判断してください。
+  </p>
+</div>
+<h1>免責事項</h1>
+<div>
+<ul>
+<li>当サイトの御利用につき、何らかのトラブルや損失・損害等につきましては一切責任を問わないものとします。</li>
+<li>当サイトが紹介しているウェブサイトやソフトウェアの合法性、正確性、道徳性、最新性、適切性、著作権の許諾や有無など、その内容については一切の保証を致しかねます。</li>
+<li>当サイトからリンクやバナーなどによって他のサイトに移動された場合、移動先サイトで提供される情報、サービス等について一切の責任を負いません。</li>
+</ul>
+</div>  
+<h1>機能</h1>
+<div>
+  <ul>
+    <li>Sign in</li>
+    <p>
+      初めて利用する方はこのリンクをクリックして、その後表示されるWithingsの使用許諾画面で「認証する」ボタンをクリックすればすべての機能が使用できます。「Sign in」後はWithingsのサイトに設定した「ニックネーム」が表示されます。
+    </p>
+    <div class="image_div">
+      <%= link_to(image_tag("menu_signin.png", :width => 320, :height => 240, :alt => "ユーザによる使用許諾画面", :title => "ユーザによる使用許諾画面"), asset_path("menu_signin.png"), {:class => "image_link", :target => "_blank"}) %>
+    </div>
+    <p>　認証画面で「認証する」をクリックしたからといってこのサイトからユーザのデータを書き換えることは出来ません。グラフ表示に必要なデータを読み取ることだけが出来るようになるのですが、Withings社が表示している認証画面の日本語の翻訳が間違えていてデータを変更したり削除したりできるような記述になっています。Twitterアプリなどと同様なのでわかっている人も多いと思いますが、誤解されないように念のため英語のスクリーンショットも載せておきます。
+    </p>
+    <div class="image_div">
+      <%= link_to(image_tag("menu_signin_en.png", :width => 320, :height => 240, :alt => "ユーザによる使用許諾画面（英語版）", :title => "ユーザによる使用許諾画面（英語版）"), asset_path("menu_signin_en.png"), {:class => "image_link", :target => "_blank"}) %>
+    </div>
+    <p>
+      英語版のほうはちゃんと「This application won't be allowed to:」となっていて、削除や編集が出来ない旨が記載されています。
+    </p>
+    <li>設定</li>
+    <p>１ページに何日分のデータを表示するか設定します。５〜３０日までの日数を指定できます。</p>
+    <li>夜間頻尿判定</li>
+    <p>Withingsのサイトで表示される週単位のグラフと同じようなグラフを表示し、その上に睡眠中に目覚めた回数<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>を線グラフで描画しています。目覚めた回数をトイレのために起きた回数と数えて、グラフ表示されている期間の平均値を計算し表示しています。平均値が２回以上の場合警告を表示しています。</p>
+    <li>削除</li>
+    <p>このサイトに保存しているユーザー情報をすべて削除します。
+    </p>
+  </ul>
+</div>
+<hr width="80%">
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p><a href="http://www.skincare-univ.com/article/006734/" target="_blank">「これって頻尿？トイレの回数から見る頻尿の定義と症状」</a><a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>Withingsのサイトでは「目覚め」と表示されている回数のことです。寝入る前と起きた直後の起きている状態はカウントされず、あくまで睡眠時間中に起きた回数がカウントされるようですが、朝起きた時も一回にカウントされることがあるようです。</p>
+    </li>
+  </ol>
+</div>

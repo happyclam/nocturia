@@ -1,0 +1,35 @@
+<h1>夜間頻尿判定</h1>
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+  <% end %>
+<div class="col-lg-10">
+  <% if @count.to_i > 0 %>
+  <%= link_to("前", prev_page_user_path) %>
+  <% else %>
+  <span>前</span>
+  <% end %>
+</div>
+<div class="col-lg-1" style="text-align: right;">
+  <% if @count.to_i > 0 %>
+  <%= link_to("次", next_page_user_path) %>
+  <% else %>
+  <span>次</span>
+  <% end %>
+</div>
+<div class="col-lg-1" style="text-align: right;">
+  <% if @count.to_i > 0 %>
+  <%= link_to("最新", last_page_user_path) %>
+  <% else %>
+  <span>最新</span>
+  <% end %>
+</div>
+<div>
+<%= high_chart("nocturia", @graph_data) %>
+</div>
+<p>※睡眠時間は小数で表し、小数点以下第三位を四捨五入しています。（例. 4時間41分 = 4.6833333時間 = 4.68）</p>
+<div id="diagnosis">
+<p>平均目覚め回数：  <%= @average %></p>
+<% if @average > 2 %>
+  <p style="color: #f00;">夜間頻尿の疑いがあります。</p>
+<% end %>
+</div>
