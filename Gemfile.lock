@@ -149,7 +149,7 @@ GEM
     omniauth-withings (1.0.3)
       multi_xml
       omniauth (~> 1.0)
-    pg (1.0.0)
+    pg (0.21.0)
     public_suffix (3.0.1)
     rack (1.6.8)
     rack-test (0.6.3)
@@ -275,7 +275,7 @@ DEPENDENCIES
   lazy_high_charts
   omniauth-oauth
   omniauth-withings
-  pg
+  pg (~> 0.21.0)
   rails (= 4.2.3)
   rails-erd
   rails_12factor
