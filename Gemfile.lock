@@ -273,6 +273,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   lazy_high_charts
+  nokogiri (~> 1.8.1)
   omniauth-oauth
   omniauth-withings
   pg (~> 0.21.0)
